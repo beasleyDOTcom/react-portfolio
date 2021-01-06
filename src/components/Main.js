@@ -12,11 +12,18 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 // attach email, and launch or link? 
-import cli from '../beasleydotcom.png';
+import cli from '../asyncAndTheAwaits.png';
+import hotBotz from '../HotBotz.png';
+import comicCat from '../ComicCat.png';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: 345,
+    },
+    container: {
+        display: 'flex',
+        justifyContent: 'space-Around',
     },
     bio: {
         maxWidth:700
@@ -40,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-
 export default function Main(){
 
     const [expanded, setExpanded] = React.useState(false);
@@ -51,7 +57,7 @@ export default function Main(){
     return (
     
  
-        <Container className="projects" alt="list of projects">
+        <Container className={classes.container} alt="list of projects">
             <Card className={classes.root}>
                 <CardHeader title="Command Love Interface" subheader="September 2020"/>
                 {/* actions for center of card and picture of project */}
@@ -64,18 +70,17 @@ export default function Main(){
                     />
                     <CardContent>
                         <Typography gutterBottom variant="body2" color="textSecondary" component="p">
-                            Command Love Interface is a dating application for developers based on the command line.
+                        A terminal based dating application that allows users to find love via the command line.
                         </Typography>
                     </CardContent>
                 <CardActions disableSpacing> 
                     {/* bottom of project card */}
-                    <Button>
-
+                    <Button href="http://command-love-interface.herokuapp.com">
                         <IconButton area-label="visit">
                             <LinkIcon/>
                         </IconButton>
                     </Button>
-                    <Button href="https://github.com/beasleydotcom">
+                    <Button href="http://github.com/Async-and-the-Awaits/">
         
                         <IconButton>
                             <GitHubIcon/>
@@ -108,40 +113,138 @@ export default function Main(){
                         Technologies/Tools Used:
                     </Typography>
                     <Typography paragraph>
-                        list out the different technologies / tools used to produce this web application
+Socket.io, JavaScript, AtlassDB, Oauth, Bcrypt, Inquirer, Figlet,
+Mongoose, Chalk, Jest, Node.js, and Jest.
                     </Typography>
                 </Collapse>
             </Card>
+{/* ----------------------------------------------------------------------------------------------------- */}
+<Card className={classes.root}>
+                <CardHeader title="What's Cook'n" subheader="October 2020"/>
+                {/* actions for center of card and picture of project */}
+                    <CardMedia
+                        component="img"
+                        alt="screen shot of what's cook'n"
+                        height="300px"
+                        image={hotBotz}
+                        title="What's Cook'n"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="body2" color="textSecondary" component="p">
+                        A full-stack mobile first social media platform that allows users to share and discover recipes.
+                        </Typography>
+                    </CardContent>
+                <CardActions disableSpacing> 
+                    {/* bottom of project card */}
+                    <Button href="http://whatscookin-4fd17.web.app/">
+
+                        <IconButton area-label="visit what's cook'n">
+                            <LinkIcon/>
+                        </IconButton>
+                    </Button>
+                    <Button href="http://github.com/hot-bots/final-project">
+        
+                        <IconButton>
+                            <GitHubIcon/>
+                        </IconButton>
+                    </Button>
+                    <Button
+                        className={clsx(classes.expand, {
+                        [classes.expand]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                    >
+                        Show More
+                    <IconButton 
+                        className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <ExpandMoreIcon/>
+                    </IconButton>  
+                    </Button>
+                    
+                </CardActions>
+                {/* this is the section that handles what is shown to the user when they click the "expand" icon */}
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <Typography variant="h6">
+                        Technologies/Tools Used:
+                    </Typography>
+                    <Typography paragraph>
+                    React.js, Redux.js, SQLite, Prisma, Node.js, Heroku, FireBase, Material
+UI, Axios, Lodash, and Jest.
+                    </Typography>
+                </Collapse>
+            </Card>
+{/* -------------------------------------------*/}
+<Card className={classes.root}>
+                <CardHeader title="Comic Cat App" subheader="July 2020"/>
+                {/* actions for center of card and picture of project */}
+                    <CardMedia
+                        component="img"
+                        alt="Screen shot of Comic Cat App"
+                        height="300px"
+                        image={comicCat}
+                        title="Comic Cat App"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="body2" color="textSecondary" component="p">
+                        This web app allows the user to search for the title of a Marvel comic and save it to the favorites
+page, where the user can “roll” for a new cat                       
+                `       </Typography>
+                    </CardContent>
+                <CardActions disableSpacing> 
+                    {/* bottom of project card */}
+                    <Button href="http://comic-cat-beasleydotcom.herokuapp.com/">
+
+                        <IconButton area-label="visit">
+                            <LinkIcon/>
+                        </IconButton>
+                    </Button>
+                    <Button href="http://github.com/Team-POST/comiccat">
+        
+                        <IconButton>
+                            <GitHubIcon/>
+                        </IconButton>
+                    </Button>
+                    <Button
+                        className={clsx(classes.expand, {
+                        [classes.expand]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                    >
+                        Show More
+                    <IconButton 
+                        className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <ExpandMoreIcon/>
+                    </IconButton>  
+                    </Button>
+                    
+                </CardActions>
+                {/* this is the section that handles what is shown to the user when they click the "expand" icon */}
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <Typography variant="h6">
+                        Technologies/Tools Used:
+                    </Typography>
+                    <Typography paragraph>
+                    Javascript, jQuery, HTML5, CSS3, postgresQL, md5, Node.js, ejs,
+Express, Method-Override, Superagent, pg, dotenv, git, Github, and Jest.
+                    </Typography>
+                </Collapse>
+            </Card>
+        
+        
         </Container>
-
-
-        // <div className="body">
-        //     <h2>Professional Portfolio of Joshua Beasley</h2>
-        //     <summary>I am so glad I've found an industry which prizes teamwork, creative problem solving, and retrospective/iterative planning because I think these are some of my biggest assets.
-        //     Driven by a desire to be helpful, I am an enthusiastic student of Software Development because I believe it is the realm in which I can do the most good for humanity and have the most fun.
-        //     </summary>
-        //     <section className="projects">
-        //         <div>
-        //             <h2>Command Love Interface</h2>
-        //         </div>
-        //         <div>
-        //             <h2>What's Cookin'</h2>
-        //         </div>
-        //         <div>
-        //             <h2>Comic Cat App</h2>
-        //         </div>
-        //     </section>
-        //     <section className="inProgress">
-        //         <div>
-        //             <h2>Be Your Shape</h2>
-        //         </div>
-        //         <div>
-        //             <h2>Report Spam</h2>
-        //         </div>
-        //         <div>
-        //             <h2>Band Website</h2>
-        //         </div>
-        //     </section>
-        // </div>
     )
 }

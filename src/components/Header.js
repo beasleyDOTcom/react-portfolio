@@ -1,4 +1,3 @@
-import logo from '../beasleydotcom.png';
 import {
     Container, Card, CardHeader, CardMedia, CardContent, CardActions,
     Typography, Button, IconButton, Avatar
@@ -11,30 +10,40 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import linkToProfileImage from '../beasleydotcom.png';
+import MtStHelens from '../MtStHelens.JPG';
+import sullys from '../sullys.JPG';
+
+
 const style = {
-    height: '30vh',
-    width: 'auto'
+    height: 'auto',
+    width: '32vw',
+    borderRadius: '40%'
 }
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
     },
-    avatar:{
-        width: 111,
-        height: 111
+    imageHolder:{
+        display: 'flex',
+        justifyContent: 'space-evenly',
+
     },
     header: {
         display: 'flex',
         padding: '10vw',
+        paddingTop: '8vw',
+        display: 'flex',
         flexDirection: 'row'
     },
-    hyperLinks: {
-        textAlign: 'center'
+    linkContainer:{
+        display: 'flex',
+        justifyContent: 'space-around',
     },
     media: {
         maxWidth: 40,
-        height: 0,
-        paddingTop: '56.25%', // 16:9,
+        height: 99,
+        paddingTop: '56.25%', // 16:9  
+        display: 'flex'     ,
     },
     expand: {
         transform: 'rotate(0deg)',
@@ -57,38 +66,51 @@ export default function Header() {
     return (
         <Container className={classes.header}>
             <Card elevation={24}>
-                <Avatar alt="Image of Beasleydotcom" src={linkToProfileImage} className={classes.avatar}/>
-                <CardMedia
-                    style={style}
-                    component="img"
-                    alt=""
-                    height="10%"
-                    image={linkToProfileImage}
-                    title="Profile Image"
-                />
+                {/* <Avatar alt="Image of Beasleydotcom" src={linkToProfileImage} className={classes.avatar}/> */}
                 <CardHeader title="Joshua Beasley" subheader="Full Stack Software Development Engineer, Musician, Sales Professional" />
+                <div className={classes.imageHolder}>
+                    <CardMedia
+                        style={style}
+                        component="img"
+                        alt=""
+                        height="10%"
+                        image={linkToProfileImage}
+                        title="Profile Image"
+                    />
+                                    <CardMedia
+                        style={style}
+                        component="img"
+                        alt=""
+                        height="10%"
+                        image={sullys}
+                        title="Profile Image"
+                    />
+                </div>
+                <div className={classes.linkContainer}>
+                    <CardActions className = {classes.hyperLinks}>
+                        <Button>
+
+                            <IconButton area-label="Hyperlink to LinkedIn">
+                                <LinkedInIcon/>
+                            </IconButton>
+                        </Button>
+                        <Button>
+                            <IconButton area-label="Hyperlink to GitHub">
+                                <GitHubIcon/>
+                            </IconButton>
+                        </Button>
+
+                    </CardActions>
+                </div>
+                
                 <CardContent>
-                    <Typography gutterBottom variant="h6" component="p">
+                    
+                    <Typography gutterBottom variant="h6" component="p" justifyContent='center'>
                         Hi! I'm Joshua Beasley and I am so glad I've found an industry which prizes teamwork, creative problem solving, and retrospective/iterative planning because I think these are some of my biggest assets.
-                        Driven by a desire to be helpful, I am an enthusiastic student of Software Development because I believe it is the realm in which I can do the most good for humanity and have the most fun.
+                        Driven by a desire to be helpful, I am an enthusiastic student of Software Development because I believe it is the intersection between which I can do the most good for humanity and have the most fun.
                     </Typography>
                 </CardContent>
 
-                <CardActions className = {classes.hyperLinks}>
-                    {/* bottom of project card */}
-                    <Button>
-
-                        <IconButton area-label="Hyperlink to LinkedIn">
-                            <LinkedInIcon/>
-                        </IconButton>
-                    </Button>
-                    <Button>
-                        <IconButton area-label="Hyperlink to GitHub">
-                            <GitHubIcon/>
-                        </IconButton>
-                    </Button>
-
-                </CardActions>
             </Card>
         </Container>
 
