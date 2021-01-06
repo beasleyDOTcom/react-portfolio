@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: 345,
     },
+    bio: {
+        maxWidth:700
+    },
     media: {
       height: 0,
       paddingTop: '56.25%', // 16:9
@@ -46,81 +49,71 @@ export default function Main(){
     const handleExpandClick = () => setExpanded(!expanded);
 
     return (
-        <>
-            <Container>
-                <Card elevation={19}>
-                <div className="bio" alt="biography">
-                    <h2>Professional Portfolio of Joshua Beasley</h2>
-                    <summary>I am so glad I've found an industry which prizes teamwork, creative problem solving, and retrospective/iterative planning because I think these are some of my biggest assets.
-                    Driven by a desire to be helpful, I am an enthusiastic student of Software Development because I believe it is the realm in which I can do the most good for humanity and have the most fun.
-                    </summary> 
-                </div>
-                </Card>
-            </Container>
+    
  
-            <Container className="projects" alt="list of projects">
-                <Card className={classes.root}>
-                    <CardHeader title="Command Love Interface" subheader="September 2020"/>
-                    {/* actions for center of card and picture of project */}
-                        <CardMedia
-                            component="img"
-                            alt=""
-                            height="300px"
-                            image={cli}
-                            title="Command Love Interface"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="body2" color="textSecondary" component="p">
-                                Command Love Interface is a dating application for developers based on the command line.
-                            </Typography>
-                        </CardContent>
-                    <CardActions disableSpacing> 
-                     {/* bottom of project card */}
-                        <Button>
+        <Container className="projects" alt="list of projects">
+            <Card className={classes.root}>
+                <CardHeader title="Command Love Interface" subheader="September 2020"/>
+                {/* actions for center of card and picture of project */}
+                    <CardMedia
+                        component="img"
+                        alt=""
+                        height="300px"
+                        image={cli}
+                        title="Command Love Interface"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="body2" color="textSecondary" component="p">
+                            Command Love Interface is a dating application for developers based on the command line.
+                        </Typography>
+                    </CardContent>
+                <CardActions disableSpacing> 
+                    {/* bottom of project card */}
+                    <Button>
+
+                        <IconButton area-label="visit">
+                            <LinkIcon/>
+                        </IconButton>
+                    </Button>
+                    <Button href="https://github.com/beasleydotcom">
         
-                            <IconButton area-label="visit">
-                                <LinkIcon/>
-                            </IconButton>
-                        </Button>
-                        <Button href="https://github.com/beasleydotcom">
-         
-                            <IconButton>
-                                <GitHubIcon/>
-                            </IconButton>
-                        </Button>
-                        <Button
-                            className={clsx(classes.expand, {
-                            [classes.expand]: expanded,
-                            })}
-                            onClick={handleExpandClick}
-                            aria-expanded={expanded}
-                        >
-                            Show More
-                        <IconButton 
-                            className={clsx(classes.expand, {
-                            [classes.expandOpen]: expanded,
-                            })}
-                            onClick={handleExpandClick}
-                            aria-expanded={expanded}
-                            aria-label="show more"
-                        >
-                            <ExpandMoreIcon/>
-                        </IconButton>  
-                        </Button>
-                     
-                    </CardActions>
-                    {/* this is the section that handles what is shown to the user when they click the "expand" icon */}
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <Typography variant="h6">
-                            Technologies/Tools Used:
-                        </Typography>
-                        <Typography paragraph>
-                            list out the different technologies / tools used to produce this web application
-                        </Typography>
-                    </Collapse>
-                </Card>
-            </Container>
-        </>
+                        <IconButton>
+                            <GitHubIcon/>
+                        </IconButton>
+                    </Button>
+                    <Button
+                        className={clsx(classes.expand, {
+                        [classes.expand]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                    >
+                        Show More
+                    <IconButton 
+                        className={clsx(classes.expand, {
+                        [classes.expandOpen]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <ExpandMoreIcon/>
+                    </IconButton>  
+                    </Button>
+                    
+                </CardActions>
+                {/* this is the section that handles what is shown to the user when they click the "expand" icon */}
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <Typography variant="h6">
+                        Technologies/Tools Used:
+                    </Typography>
+                    <Typography paragraph>
+                        list out the different technologies / tools used to produce this web application
+                    </Typography>
+                </Collapse>
+            </Card>
+        </Container>
+
 
         // <div className="body">
         //     <h2>Professional Portfolio of Joshua Beasley</h2>
