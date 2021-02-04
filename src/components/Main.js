@@ -20,6 +20,7 @@ import comicCat from '../ComicCat.png';
 const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: 345,
+      height: '100%',
     },
     container: {
         display: 'flex',
@@ -58,7 +59,7 @@ export default function Main(){
     
  
         <Container className={classes.container} alt="list of projects">
-            <Card className={classes.root}>
+            <Card className={classes.root} key={Math.random()} elevation={24}>
                 <CardHeader title="Command Love Interface" subheader="September 2020"/>
                 {/* actions for center of card and picture of project */}
                     <CardMedia
@@ -119,7 +120,7 @@ Mongoose, Chalk, Jest, Node.js, and Jest.
                 </Collapse>
             </Card>
 {/* ----------------------------------------------------------------------------------------------------- */}
-<Card className={classes.root}>
+<Card className={classes.root} key={Math.random()}>
                 <CardHeader title="What's Cook'n" subheader="October 2020"/>
                 {/* actions for center of card and picture of project */}
                     <CardMedia
@@ -181,7 +182,7 @@ UI, Axios, Lodash, and Jest.
                 </Collapse>
             </Card>
 {/* -------------------------------------------*/}
-<Card className={classes.root}>
+<Card className={classes.root} key={Math.random()}>
                 <CardHeader title="Comic Cat App" subheader="July 2020"/>
                 {/* actions for center of card and picture of project */}
                     <CardMedia

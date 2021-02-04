@@ -88,13 +88,13 @@ export default function Header() {
                 </div>
                 <div className={classes.linkContainer}>
                     <CardActions className = {classes.hyperLinks}>
-                        <Button>
+                        <Button href="https://linkedin.com/in/beasleydotcom">
 
                             <IconButton area-label="Hyperlink to LinkedIn">
                                 <LinkedInIcon/>
                             </IconButton>
                         </Button>
-                        <Button>
+                        <Button href="https://github.com/beasleydotcom">
                             <IconButton area-label="Hyperlink to GitHub">
                                 <GitHubIcon/>
                             </IconButton>
